@@ -1,0 +1,10 @@
+{
+  "liveServer.settings.customHeaders": [
+    {
+      "match": "\\.(js)$",
+      "headers": {
+        "Content-Type": "application/javascript"
+      }
+    }
+  ]
+}

@@ -5,9 +5,33 @@
     <title>Vue 3 Import Example</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
-    <a-component></a-component>
+    <div id="app">
+      {{ message }}
+      <!-- <a-component></a-component> -->
+      <!-- <h1>{{ $translate('greetings.hello') }}</h1> -->
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      // import componentA from "./ComponentA.vue";
 
-    <script type="module" src="./main.js"></script>
+      createApp({
+        data() {
+          return {
+            message: "Hello Vue!",
+          };
+        },
+        components: {
+          "a-component": componentA,
+        },
+      }).mount("#app");
+
+      // import i18nPlugin from "./plugins/i18n.js";
+
+      // app.use(i18nPlugin, {
+      //   greetings: {
+      //     hello: "Bonjour!",
+      //   },
+      // });
+    </script>
   </body>
 </html>
